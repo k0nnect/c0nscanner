@@ -1,0 +1,93 @@
+# c0nscanner default configuration
+# override these settings via cli flags or custom config file
+
+scanner:
+  threads: 10
+  timeout: 30
+  retries: 3
+  delay: 0
+  user_agent: "c0nscanner/1.0"
+  follow_redirects: true
+  max_depth: 3
+  scope: "strict"  # strict = same domain only, loose = same tld
+
+modules:
+  sqli:
+    enabled: true
+    techniques:
+      - "error"
+      - "blind"
+      - "time"
+      - "union"
+    max_payloads: 50
+  xss:
+    enabled: true
+    types:
+      - "reflected"
+      - "dom"
+    max_payloads: 50
+  cmdi:
+    enabled: true
+    techniques:
+      - "blind"
+      - "error"
+    max_payloads: 30
+  lfi:
+    enabled: true
+    depth: 8
+    max_payloads: 40
+  ssrf:
+    enabled: true
+    callback_url: ""
+    max_payloads: 20
+  headers:
+    enabled: true
+  direnum:
+    enabled: true
+    wordlist: "builtin"
+    extensions:
+      - ".php"
+      - ".html"
+      - ".js"
+      - ".txt"
+      - ".bak"
+      - ".old"
+    max_entries: 500
+  cors:
+    enabled: true
+  openredirect:
+    enabled: true
+    max_payloads: 20
+  csrf:
+    enabled: true
+  infodisclosure:
+    enabled: true
+
+output:
+  format: "text"
+  verbose: false
+  colors: true
+  show_evidence: true
+  show_remediation: true
+
+stealth:
+  threads: 1
+  delay: 2
+  randomize_ua: true
+  jitter: 1.5
+
+aggressive:
+  threads: 50
+  delay: 0
+  all_payloads: true
+  max_payloads: 0  # 0 = unlimited
+
+auth:
+  type: ""  # basic, bearer, cookie
+  credentials: ""
+  cookie: ""
+  header: ""
+
+proxy:
+  url: ""
+  auth: ""

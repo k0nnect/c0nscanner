@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "c0nscanner"
+version = "1.0.0"
+description = "a comprehensive web vulnerability scanner"
+readme = "readme.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "c0nscanner"}
+]
+keywords = ["security", "vulnerability", "scanner", "pentesting"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+dependencies = [
+    "aiohttp>=3.9.0",
+    "aiofiles>=23.0.0",
+    "pyyaml>=6.0",
+    "jinja2>=3.1.0",
+    "rich>=13.0.0",
+    "click>=8.1.0",
+    "validators>=0.22.0",
+    "tldextract>=5.1.0",
+    "dnspython>=2.4.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=5.0.0",
+]
+
+[project.scripts]
+c0nscanner = "c0nscanner.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/c0nscanner"
+Repository = "https://github.com/yourusername/c0nscanner"
+
+[tool.setuptools.packages.find]
+include = ["c0nscanner*"]
+
+[tool.setuptools.package-data]
+c0nscanner = ["payloads/*.txt"]

