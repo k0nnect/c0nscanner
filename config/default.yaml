@@ -64,7 +64,7 @@ modules:
     enabled: true
 
 output:
-  format: "text"
+  format: "all"
   verbose: false
   colors: true
   show_evidence: true
